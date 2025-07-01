@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#spotlight {
+  padding: 100px 0;
+}
+
+.spot-row-content {
+  align-items: center;
+}
+
+.spot-row-content h1 {
+  font-size: 4.5em;
+  color: rgb(90, 84, 84);
+}
+
+.spot-row-content .btn-cont {
+  margin-left: 20px;
+}
+
+.spot-row-content .btn {
+  margin-top: 20px;
+  padding: 10px 35px;
+  background: #4e8098;
+  border: none;
+}
+.spot-row-content .btn:hover {
+  background: #2c6c6c;
+}
+
+.spot-row-content .btn2 {
+  margin-left: 20px;
+}
+.masked-video-container {
+  position: relative;
+  width: 570px;
+  height: 570px;
+  margin: 0 auto;
+}
+
+.video-mask {
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: url("../assets/mask2.png");
+  mask-image: url("../assets/mask2.png");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  overflow: hidden;
+}
+
+.video-mask video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plane-img {
+  position: absolute;
+  top: 14px;
+  left: 22px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none; /* So clicks pass through */
+}
+
+/* responsive starts here */
+@media (max-width: 778px) {
+  .spot-row-content h1 {
+    font-size: 2.5em;
+    color: rgb(90, 84, 84);
+  }
+  #spotlight {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    text-align: center;
+    font-size: 8px;
+  }
+  .spot-row-content .btn2 {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .spot-row-content {
+    text-align: center;
+  }
+}

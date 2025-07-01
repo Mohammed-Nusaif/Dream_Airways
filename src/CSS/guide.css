@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#support {
+  width: 100%;
+  margin-top: 100px;
+}
+#support .content {
+  width: 100%;
+  text-align: center;
+}
+#support .content h3 {
+  font-weight: lighter;
+  font-size: 15px;
+  letter-spacing: 1pc;
+}
+#support .content p {
+  font-weight: lighter;
+}
+#guide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+#guide span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px 5px;
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+}
+#guide .requirement span {
+  background-color: rgb(122, 122, 255);
+}
+#guide .services span {
+  background-color: rgb(255, 148, 109);
+}
+
+#guide .insurance span {
+  background-color: peachpuff;
+}
+#guide .cnt h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+#guide .cnt h2 p {
+  font-size: 10px;
+}
+#guide img {
+  width: 200px;
+  height: 250px;
+  border-radius: 100px;
+}
+#guide .window1 {
+  position: absolute;
+  top: 83px;
+  right: 314px;
+}
+#guide .window2 {
+  position: absolute;
+  top: 90px;
+  right: 24px;
+}
+#guide .plane {
+  position: absolute;
+  top: 6px;
+  right: 156px;
+}
+
+@media (max-width: 1200px) {
+  .row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  #guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
