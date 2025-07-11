@@ -1,70 +1,175 @@
-# Getting Started with Create React App
+# ✈️ Dreams Airways – Flight Booking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Dreams Airways** is a modern full-stack flight booking web application that enables users to search for available flights, select preferences such as cabin class and number of passengers, and confirm bookings. Built with the MERN stack (MongoDB, Express, React, Node.js), the app provides a seamless and interactive booking experience, including confirmation PDFs and optional notifications.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📸 Preview
 
-### `npm start`
+>![App Preview](./src/assets/web-pic/spotlight.png)
+>![App Preview](./src/assets/web-pic/booking.png)
+>![App Preview](./src/assets/web-pic/guide.png)
+>![App Preview](./src/assets/web-pic/memories.png)
+>![App Preview](./src/assets/web-pic/footer.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Tech Stack
 
-### `npm test`
+**Frontend:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js (with React Router)
+- Tailwind CSS / Custom CSS
+- EmailJS for contact form
+- jsPDF for booking confirmation
 
-### `npm run build`
+**Backend:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js + Express.js
+- MongoDB (Atlas)
+- Mongoose ODM
+- dotenv for config
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ Features
 
-### `npm run eject`
+- 🔎 **Search Flights** based on departure, arrival, cabin class, passengers, and date
+- ✅ **Real-time flight listing** after search
+- 🧾 **Booking confirmation modal** with printable PDF generation
+- 📩 **EmailJS-powered contact form** (users can send feedback)
+- 📱 **Mobile responsive** and intuitive design
+- 🔐 **Secure backend** with MongoDB validation and REST API structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ⚖️ Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js (v14+)
+- MongoDB Atlas account (or local MongoDB)
+- EmailJS account (for contact form)
 
-## Learn More
+### 📅 Clone the Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/your-username/dreams-airways.git
+cd dreams-airways
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🔠 Run Frontend
 
-### Code Splitting
+```bash
+cd flight-app-client
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### ⚙️ Run Backend
 
-### Analyzing the Bundle Size
+```bash
+cd flight-app-server
+npm install
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> Make sure `.env` in backend has your MongoDB URI and port configured.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ⚙️ Configuration
 
-### Advanced Configuration
+### `.env` file (backend)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```env
+PORT=5000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/dreamsAirways
+```
 
-### Deployment
+### EmailJS Setup (frontend)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Replace placeholders in `emailjs.send(...)`:
 
-### `npm run build` fails to minify
+```js
+emailjs.send(
+  'your_service_id',
+  'your_template_id',
+  {
+    from_name: form.name,
+    from_email: form.email,
+    message: form.message,
+  },
+  'your_user_or_public_key'
+);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 📁 Project Structure
+
+```bash
+flight-app-client/
+🔁
+├── Components/
+│   ├── Booking.jsx
+│   ├── FlightList.jsx
+│   ├── ConfirmationModal.jsx
+│   ├── Contact.jsx
+│   └── ...
+│
+├── App.js
+└── index.js
+
+flight-app-server/
+🔁
+├── routes/
+│   └── bookings.js
+├── models/
+│   └── Booking.js
+├── controllers/
+├── server.js
+└── .env
+```
+
+---
+
+## 📁 How It Works
+
+1. User selects flight criteria in the **Booking** component.
+2. On clicking **Search Flights**, the frontend sends a request to the backend for matching flights.
+3. Matching flights are displayed in the **FlightList** component.
+4. User books a flight, which opens a **confirmation modal**.
+5. On confirmation, a **PDF ticket is generated** and the data is saved to MongoDB.
+6. Optionally, a success message/email/SMS is sent.
+
+---
+
+## ✅ Future Enhancements
+
+- 🧾 Integrate Razorpay/Stripe for payment handling
+- 📧 Email confirmation with PDF attached
+- 📱 PWA support for offline access
+- ✈️ Admin panel for flight management
+
+---
+
+## 👥 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss.
+
+---
+
+## 👨‍💻 Author
+
+**Mohammed Nusaif**\
+📩 [nsf.ibn.sathar@gmail.com](mailto\:nsf.ibn.sathar@gmail.com)\
+🔗 [GitHub](https://github.com/Mohammed-Nusaif)
+
+---
+
+## 🧫 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
